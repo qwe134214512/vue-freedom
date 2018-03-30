@@ -1,0 +1,26 @@
+/*
+ * @Author: summer
+ * @Date: 2018-03-29 08:45:47
+ * @Last Modified by: summer
+ * @Last Modified time: 2018-03-29 08:51:12
+ */
+
+ @import './function.scss';
+
+ /* BEM
+ -------------------------- */
+@mixin b($block) {
+  $B: $namespace+'-'+$block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}

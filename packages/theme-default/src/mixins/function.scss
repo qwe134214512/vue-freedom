@@ -1,0 +1,8 @@
+@import 'config.scss';
+
+/**
+ * 计算 cal
+ */
+@function tocalc ($i) {
+  @return (1 / 24 * $i * 100%);
+};

@@ -1,0 +1,101 @@
+@charset "UTF-8";
+@import './mixins/function.scss';
+
+.v-col-1, .v-col-2, .v-col-3, .v-col-4, .v-col-5, .v-col-6, .v-col-7, .v-col-8, .v-col-9, .v-col-10, .v-col-11, .v-col-12, .v-col-13, .v-col-14, .v-col-15, .v-col-16, .v-col-17, .v-col-18, .v-col-19, .v-col-20, .v-col-21, .v-col-22, .v-col-23, .v-col-24 {
+  float: left;
+  box-sizing: border-box;
+}
+.v-col-0 {
+  width: 0;
+}
+
+@for $i from 0 through 24 {
+  .v-col-#{$i} {
+    width: tocalc($i);
+  }
+  .v-col-offset-#{$i} {
+    margin-left: tocalc($i);
+  }
+  .v-col-pull-#{$i} {
+    position: relative;
+    right: tocalc($i);
+  }
+  .v-col-push-#{$i} {
+    position: relative;
+    left: tocalc($i);
+  }
+}
+
+@media (max-width: 768px) {
+  @for $i from 0 to 24 {
+    .v-col-xs-#{$i} {
+      width: tocalc($i);
+    }
+    .v-col-xs-offset-#{$i} {
+      margin-left: tocalc($i);
+    }
+    .v-col-xs-pull-#{$i} {
+      position: relative;
+      right: tocalc($i);
+    }
+    .v-col-xs-push-#{$i} {
+      position: relative;
+      left: tocalc($i);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  @for $i from 0 to 24 {
+    .v-col-sm-#{$i} {
+      width: tocalc($i);
+    }
+    .v-col-sm-offset-#{$i} {
+      margin-left: tocalc($i);
+    }
+    .v-col-sm-pull-#{$i} {
+      position: relative;
+      right: tocalc($i);
+    }
+    .v-col-sm-push-#{$i} {
+      position: relative;
+      left: tocalc($i);
+    }
+  }
+}
+@media (min-width: 992px) {
+  @for $i from 0 to 24 {
+    .v-col-md-#{$i} {
+      width: tocalc($i);
+    }
+    .v-col-md-offset-#{$i} {
+      margin-left: tocalc($i);
+    }
+    .v-col-md-pull-#{$i} {
+      position: relative;
+      right: tocalc($i);
+    }
+    .v-col-md-push-#{$i} {
+      position: relative;
+      left: tocalc($i);
+    }
+  }
+}
+@media (min-width: 1200px) {
+  @for $i from 0 to 24 {
+    .v-col-lg-#{$i} {
+      width: tocalc($i);
+    }
+    .v-col-lg-offset-#{$i} {
+      margin-left: tocalc($i)
+    }
+    .v-col-lg-pull-#{$i} {
+      position: relative;
+      right: tocalc($i)
+    }
+    .v-col-lg-push-#{$i} {
+      position: relative;
+      left: tocalc($i)
+    }
+  }
+}

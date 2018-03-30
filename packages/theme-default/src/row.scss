@@ -1,0 +1,19 @@
+
+$justify: start,end,center,space-around,space-between;
+$align: top,middle,bottom;
+
+.v-row--flex {
+  display: flex;
+
+  @each $sort in $justify {
+    &.is-justify-#{$sort} {
+      justify-content: $sort
+    }
+  }
+
+  @each $align in $align {
+    &.is-align-#{$align} {
+      align-items: $align
+    }
+  }
+}
