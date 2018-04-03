@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <mainHeader></mainHeader>
+    <v-container class="container" v-if="!isIndex">
+      <sideNav class="nav"></sideNav>
+      <router-view class="view"></router-view>
+    </v-container>
+    <router-view class="page" v-if="isIndex"></router-view>
+    <!-- <img src="./assets/logo.png">
     <v-row :gutter='20' type='flex' justify='center'>
       <v-col :span='4'><div class="grid-content bg-purple"></div></v-col>
       <v-col :span='4'><div class="grid-content bg-purple-light"></div></v-col>
@@ -9,79 +15,82 @@
       <v-aside width="200px">Aside</v-aside>
       <v-main>Main</v-main>
     </v-container>
-     <!-- <router-view/> -->
+    <v-button type='warning' loading>我是</v-button>
+      <v-button>默认按钮</v-button>
+      <v-button type="primary">主要按钮</v-button>
+      <v-button type="success">成功按钮</v-button>
+      <v-button type="info">信息按钮</v-button>
+      <v-button type="warning">警告按钮</v-button>
+      <v-button type="danger">危险按钮</v-button>
+      <v-row>
+        <v-button plain>朴素按钮</v-button>
+        <v-button type="primary" icon="v-ico-edit">NIHAO </v-button>
+        <v-button type="success" circle>成功按钮</v-button>
+        <v-button type="info" plain>信息按钮</v-button>
+        <v-button type="warning" plain>警告按钮</v-button>
+        <v-button type="danger" plain>危险按钮</v-button>
+      </v-row>
+    <v-row>
+      <v-button-group>
+        <v-button type="primary">上一页</v-button>
+        <v-button type="primary">下一页</v-button>
+      </v-button-group>
+
+    </v-row>
+    <input type="radio" value='sss' v-model='pri'>
+    <radio v-model="pri" label='1' ></radio>
+    <v-radio v-model="pri" label='10'>ss</v-radio> -->
   </div>
 </template>
 
 <script>
+import mainHeader from './components/header'
+import sideNav from './components/side-nav'
+import radio from './components/radio'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    mainHeader,
+    sideNav,
+    radio
+  },
+  data () {
+    return {
+      isIndex: true
+    }
+  },
+  watch: {
+    $route () {
+      this.isIndex = this.$route.name === 'index'
+    }
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="less" type="text/less">
+@import './assets/less/index.less';
+* {
+  font-family: Consolas, Menlo, Courier, monospace;
 }
-  .el-row {
-    margin-bottom: 20px;
+.container {
+  margin: 48px auto;
+  width: 90%;
+  background-color: #fff;
+  box-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
+  .nav {
+    float: left;
+    width: 210px;
   }
-  .el-col {
-    border-radius: 4px;
+  .view {
+    float: left;
+    width: calc(~"100% - 215px");
+    padding: 32px 48px 48px;
+    box-sizing: border-box;
   }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
-  .v-header, .v-footer {
-    background-color: #B3C0D1;
-    color: #333;
-    text-align: center;
-    line-height: 60px;
-  }
-
-  .v-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-  }
-
-  .v-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 160px;
-  }
-
-  body > .v-container {
-    margin-bottom: 40px;
-  }
-
-  .v-container:nth-child(5) .v-aside,
-  .v-container:nth-child(6) .v-aside {
-    line-height: 260px;
-  }
-
-  .v-container:nth-child(7) .v-aside {
-    line-height: 320px;
-  }
+}
+.container:after {
+  content: "";
+  clear: both;
+  display: block;
+}
 </style>

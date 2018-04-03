@@ -5,6 +5,9 @@ import VHeader from './header/index'
 import VMain from './main/index'
 import VFooter from './footer/index'
 import VAside from './aside/index'
+import VButtonGroup from './button-group/index'
+import VButton from './button/index'
+import VRadio from './radio/index'
 
 const components = [
   VRow,
@@ -13,7 +16,10 @@ const components = [
   VHeader,
   VMain,
   VFooter,
-  VAside
+  VAside,
+  VButtonGroup,
+  VButton,
+  VRadio
 ]
 
 /**

@@ -1,14 +1,18 @@
 /*
  * @Author: summer
  * @Date: 2018-03-29 08:45:47
- * @Last Modified by: summer
- * @Last Modified time: 2018-03-29 08:51:12
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-03-30 15:50:58
  */
 
  @import './function.scss';
 
  /* BEM
  -------------------------- */
+
+ /*
+  --- v-*** ----
+*/
 @mixin b($block) {
   $B: $namespace+'-'+$block !global;
 
@@ -17,9 +21,28 @@
   }
 }
 
+/*
+  --- is-*** ----
+*/
 @mixin when($state) {
   @at-root {
     &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+/*
+  --- v-**--***   *** ----
+*/
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+
+  $currentSelector: #{& + $modifier-separator + $modifier};
+
+  @at-root {
+    #{$currentSelector} {
       @content;
     }
   }
