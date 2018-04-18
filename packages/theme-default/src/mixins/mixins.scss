@@ -47,3 +47,20 @@
     }
   }
 }
+
+/*
+  --- v-**__***   *** ----
+*/
+@mixin e($element) {
+  $selector: &;
+  $currentSelector: "";
+
+  $currentSelector: #{& + $element-separator + $element};
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+

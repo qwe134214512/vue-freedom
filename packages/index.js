@@ -8,6 +8,7 @@ import VAside from './aside/index'
 import VButtonGroup from './button-group/index'
 import VButton from './button/index'
 import VRadio from './radio/index'
+import VRadioGroup from './radio-group/index'
 
 const components = [
   VRow,
@@ -19,7 +20,8 @@ const components = [
   VAside,
   VButtonGroup,
   VButton,
-  VRadio
+  VRadio,
+  VRadioGroup
 ]
 
 /**
@@ -38,5 +40,9 @@ export default {
   VHeader,
   VMain,
   VFooter,
-  VAside
+  VAside,
+  VButtonGroup,
+  VButton,
+  VRadio,
+  VRadioGroup
 }

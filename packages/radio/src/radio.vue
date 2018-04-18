@@ -34,17 +34,33 @@
 export default {
   name: 'VRadio',
   componentName: 'VRadio',
+
   data () {
     return {
       focus: false
     }
   },
   computed: {
+    isGroup () {
+      let parent = this.$parent
+      while (parent) {
+        if (parent.$options.componentName !== 'VRadioGroup') {
+          parent = parent.$parent
+        } else {
+          this._radioGroup = parent
+          return true
+        }
+      }
+      return false
+    },
     model: {
       get () {
-        return this.value
+        return this.isGroup ? this._radioGroup.value : this.value
       },
       set (val) {
+        if (this.isGroup) {
+          this._radioGroup.$emit('input', val)
+        }
         this.$emit('input', val)
       }
     }

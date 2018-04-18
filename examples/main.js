@@ -3,8 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import demoBlock from './components/demo-block.vue'
+
 import '../packages/theme-default/lib/index.css'
 import VueFreedom from '../packages/index'
+// import 'vue-freedom/packages/theme-default/lib/index.css'
+// import VueFreedom from 'vue-freedom'
+Vue.component('demo-block', demoBlock)
 
 Vue.use(VueFreedom)
 Vue.config.productionTip = false

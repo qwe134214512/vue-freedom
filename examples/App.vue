@@ -3,43 +3,11 @@
     <mainHeader></mainHeader>
     <v-container class="container" v-if="!isIndex">
       <sideNav class="nav"></sideNav>
-      <router-view class="view"></router-view>
+        <transition name="fade" mode="out-in">
+          <router-view class="view"></router-view>
+        </transition>
     </v-container>
     <router-view class="page" v-if="isIndex"></router-view>
-    <!-- <img src="./assets/logo.png">
-    <v-row :gutter='20' type='flex' justify='center'>
-      <v-col :span='4'><div class="grid-content bg-purple"></div></v-col>
-      <v-col :span='4'><div class="grid-content bg-purple-light"></div></v-col>
-    </v-row>
-    <v-container>
-      <v-aside width="200px">Aside</v-aside>
-      <v-main>Main</v-main>
-    </v-container>
-    <v-button type='warning' loading>我是</v-button>
-      <v-button>默认按钮</v-button>
-      <v-button type="primary">主要按钮</v-button>
-      <v-button type="success">成功按钮</v-button>
-      <v-button type="info">信息按钮</v-button>
-      <v-button type="warning">警告按钮</v-button>
-      <v-button type="danger">危险按钮</v-button>
-      <v-row>
-        <v-button plain>朴素按钮</v-button>
-        <v-button type="primary" icon="v-ico-edit">NIHAO </v-button>
-        <v-button type="success" circle>成功按钮</v-button>
-        <v-button type="info" plain>信息按钮</v-button>
-        <v-button type="warning" plain>警告按钮</v-button>
-        <v-button type="danger" plain>危险按钮</v-button>
-      </v-row>
-    <v-row>
-      <v-button-group>
-        <v-button type="primary">上一页</v-button>
-        <v-button type="primary">下一页</v-button>
-      </v-button-group>
-
-    </v-row>
-    <input type="radio" value='sss' v-model='pri'>
-    <radio v-model="pri" label='1' ></radio>
-    <v-radio v-model="pri" label='10'>ss</v-radio> -->
   </div>
 </template>
 
@@ -69,14 +37,14 @@ export default {
 
 <style lang="less" type="text/less">
 @import './assets/less/index.less';
-* {
-  font-family: Consolas, Menlo, Courier, monospace;
-}
+// * {
+//   font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+// }
 .container {
   margin: 48px auto;
   width: 90%;
   background-color: #fff;
-  box-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
+  box-shadow: 0 1px 30px 0 rgba(99,138,51,.3);
   .nav {
     float: left;
     width: 210px;
@@ -92,5 +60,11 @@ export default {
   content: "";
   clear: both;
   display: block;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

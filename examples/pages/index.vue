@@ -3,12 +3,12 @@
     <div class="index-container">
       <img src="../assets/logo.png" width="300px">
       <p>一款轻量级、模块化的前端 UI 组件库</p>
-      <span>(借鉴 Element-UI)</span>
+      <a href="http://element-cn.eleme.io/#/zh-CN">( 借鉴 Element-UI )</a>
     </div>
     <div class="separate-panel">
       <div class="about">
         <router-link :to="{name: 'giud'}">开始使用</router-link>
-        <a target="_blank" class="btn-github" href="https://github.com/VV-UI/VV-UI">GitHub</a>
+        <a target="_blank" class="btn-github" href="https://github.com/qwe134214512/vue-freedom">GitHub</a>
       </div>
     </div>
   </div>
@@ -34,12 +34,13 @@ export default {
 .pg-index .index-container p {
   margin-top: 56px;
   margin-bottom: 12px;
-  color: #8994c6;
+  color: #638a33;
   font-size: 32px;
 }
-.pg-index .index-container span {
-  font-size: 14px;
-  color: #409EFF;
+.pg-index .index-container a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #accf33;
 }
 .pg-index .separate-panel {
   position: relative;
@@ -57,7 +58,7 @@ export default {
 
 .pg-index .separate-panel .about a {
   color: #fff;
-  background-image: linear-gradient(90deg, #00aeff 0%, #3369e7 100%);
+  background-image: linear-gradient(90deg, #638a33 0%, #97c625 100%);
   box-shadow: 0 2px 6px 0 rgba(51, 105, 231, 0.4);
   display: inline-block;
   width: 190px;
@@ -73,8 +74,8 @@ export default {
 }
 
 .pg-index .separate-panel .about .btn-github {
-  color: #316de9;
-  border: 1px solid #2f6ee9;
+  color: #97c625;
+  border: 1px solid #97c625;
   background: #fff;
   box-shadow: none;
 }

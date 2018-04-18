@@ -9,11 +9,16 @@
 
 [class^="v-ico-"], [class*=" v-ico-"] {
   font-family:"iconfont" !important;
-  font-size:16px;font-style:normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
 }
 
 .v-ico-appreciate:before { content: "\e644"; }

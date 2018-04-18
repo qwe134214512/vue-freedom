@@ -6,7 +6,7 @@
 
 > 在使用之前，推荐学习 `Vue` 和 `ES2015` ，并正确配置 `Node.js` v6.x 或以上版本
 
-`VV-UI` 基于 `Vue.js` 2.x+ 版本开发，所以有必要了解以下基础知识：
+`Vue-freedom` 基于 `Vue.js` 2.x+ 版本开发，所以有必要了解以下基础知识：
 - [Vue 组件](https://cn.vuejs.org/v2/guide/components.html)
 - [单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html)
 
@@ -30,10 +30,10 @@
 可以在项目的入口文件中引入所有组件或所需组件
 
 ```js
-import VvUI from 'vvui' // 引入组件库
-import '../node_modules/VVUI/packages/theme-default/lib/index.css' // 引入样式库
+import VueFreedom from 'vue-freedom' // 引入组件库
+import 'vue-freedom/packages/theme-default/lib/index.css' // 引入样式库
 
-Vue.use(VvUI)
+Vue.use(VueFreedom)
 ```
 
 ### 单个组件按需使用
@@ -41,7 +41,7 @@ Vue.use(VvUI)
 可以局部注册所需的组件，适用于与其他框架组合使用的场景
 
 ```js
-import { VButton } from 'vv-ui'
+import { VButton } from 'vue-freedom'
 
 export default {
   components: {
@@ -50,16 +50,12 @@ export default {
 }
 ```
 
-在模板中，用 `<w-button></w-button>` 自定义标签的方式使用组件
+在模板中，用 `<v-button></v-button>` 自定义标签的方式使用组件
 
 ```html
 <template>
   <div>
-    <w-button>这是一个按钮</w-button>
+    <v-button>这是一个按钮</v-button>
   </div>
 </template>
 ```
-
-## 自定义主题
-
-`VV-UI` 各个组件的样式变量都存放在 `vv-ui/packages/theme-defualt/common/var.css` 文件中。用户可根据实际需要，自定义组件的样式

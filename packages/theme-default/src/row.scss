@@ -1,6 +1,13 @@
 
 $justify: start,end,center,space-around,space-between;
 $align: top,middle,bottom;
+@import "mixins/utils";
+.v-row {
+  position: relative;
+  box-sizing: border-box;
+
+  @include utils-clearfix;
+}
 
 .v-row--flex {
   display: flex;
